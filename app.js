@@ -22,19 +22,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(expressValidator());
 
-let users = [
-    {
-        firstname: 'Andy',
-        lastname: 'Warhol',
-        email: 'andywarhol@gmail.com'
-    },
-    {
-        firstname: 'John',
-        lastname: 'Petrucci',
-        email: 'johnptrucci@gmail.com'
-    },
-];
-
 app.get('/', function (req, res) {
     db.users.find(function (err, docs) {
         if (err) {
